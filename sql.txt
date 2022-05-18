@@ -1,0 +1,15 @@
+SET SQL_SAFE_UPDATES = 0;
+delete from t_vote_process;
+delete from t_vote_unit;
+
+ALTER TABLE t_vote_unit auto_increment = 1;
+ALTER TABLE t_vote_process auto_increment = 1;
+
+
+select 
+ tweet_id
+ ,count(*)
+from 
+ t_vote_unit
+group by
+ tweet_id
